@@ -1,0 +1,398 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    overflow: hidden;
+}
+
+canvas {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.intro {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    top: 0px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
+    z-index: 2;
+}
+
+.intro-texto {
+    color: #00BFFF;
+    font-family: 'News Cycle', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+
+@media (min-width: 360px){
+    .intro-texto {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 430px){
+    .intro-texto {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 530px){
+    .intro-texto {
+        font-size: 1.7em;
+    }
+}
+
+@media (min-width: 630px){
+    .intro-texto {
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 730px){
+    .intro-texto {
+        font-size: 2.2em;
+    }
+}
+
+.botao {
+    border: 0.2em solid;
+    border-radius: 5em;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    margin: 1em;
+    padding: 0.3em;
+    position: absolute;
+    top: 0px;
+    z-index: 10;
+}
+
+.outro-botao {
+    border: 0.2em solid;
+    border-radius: 5em;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    margin: 1em;
+    padding: 0.3em;
+    position: absolute;
+    top: 0px;
+    z-index: -10;
+    opacity: 0;
+}
+
+.intro-animacao {
+    animation: intro 2s ease-out 0s;
+}
+
+@keyframes intro {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.letreiro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+}
+
+.img-letreiro {
+    border-radius: 2.2em;
+    display: block;
+    opacity: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-animacao {
+    transform: scale(1);
+    animation: 15s ease-out 2.1s animacaoImagem forwards;
+}
+
+@keyframes animacaoImagem {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 1;
+    }
+}
+
+.desaparecer {
+    background-image: linear-gradient(0deg, transparent, black 75%);
+    height: 12.2em;
+    width: 65vw;
+    left: 18%;
+    bottom: 53%;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+.paragrafos {
+    position: absolute;
+    left: 15%;
+    width: 70%;
+    transform-origin: 50%;
+    transform: perspective(550px) rotateX(55deg);
+    height: 400px; 
+    bottom: -20px;
+}
+
+.historia {
+    position: absolute;
+    opacity: 0;
+}
+
+.historia-texto {
+    font-family: "News Cycle", sans-serif;
+    font-weight: 700;
+    color: #FFD700;
+    text-align: justify;
+    letter-spacing: .1em;
+    line-height: 1.1em;
+    z-index: 0;
+}
+
+.text-titulo {
+    font-size: 1.4em;
+    top: 100vh;
+    text-align: center;
+    line-height: 100%;
+}
+
+.text-center {
+    font-size: 0.9em;
+    text-align: justify;
+    line-height: 100%;
+}
+.copy {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 1em;
+    font-size: .9em;
+}
+.copy a{
+    
+    text-decoration: none;
+    color: white;
+  }
+  .copy a:hover {
+    text-decoration: underline;
+  }
+
+@media (min-width: 359px) {
+    .text-titulo {
+        font-size: 1.6em;
+    }
+    .text-center {
+        font-size: 1.2em;
+    }
+    .desaparecer {
+        height: 11em;
+        bottom: 51%;
+    }
+}
+
+@media (min-width: 370px) {
+    .text-titulo {
+        font-size: 1.7em;
+    }
+    .text-center {
+        font-size: 1.2em;
+    }
+    .desaparecer {
+        bottom: 52%;
+        height: 13em;
+    }
+    .paragrafos {
+        bottom: 0px;
+        transform: perspective(600px) rotateX(55deg);
+        height: 450px;
+    }
+}
+
+@media (min-width: 420px) {
+    .text-titulo{
+        font-size: 1.9em;
+    }
+    .text-center {
+        font-size: 1.6em;
+    }
+    .paragrafos {
+        bottom: -27px;
+        transform: perspective(530px) rotateX(55deg);
+        height: 390px;
+    }
+    .desaparecer {
+        bottom: 40%;
+        height: 12.3em;
+    }
+}
+
+@media (min-width: 600px) {
+    .text-titulo{
+        font-size: 2.8em;
+    }
+    .text-center {
+        font-size: 2em;
+    }
+    .paragrafos {
+        bottom: 15px;
+        transform: perspective(580px) rotateX(55deg);
+        height: 390px;
+    }
+    .desaparecer {
+        bottom: 37%;
+        height: 12.5em;
+        left: 21%;
+        width: 58%;
+    }
+}
+
+@media (min-width: 730px) {
+    .text-titulo{
+        font-size: 3.5em;
+    }
+    .text-center {
+        font-size: 2.6em;
+    }
+    .paragrafos {
+        bottom: 54px;
+        transform: perspective(490px) rotateX(45deg);
+        height: 430px;
+    }
+    .desaparecer {
+        bottom: 44%;
+        height: 15.5em;
+        left: 22%;
+        width: 56vw;
+    }
+}
+
+@media (min-width: 850px) {
+    .text-titulo {
+        font-size: 4em;
+    }
+    .text-center {
+        font-size: 3.1em;
+    }
+    .paragrafos {
+        bottom: 34px;
+        transform: perspective(410px) rotateX(36deg);
+        height: 430px;
+    }
+    .desaparecer {
+        bottom: 50%;
+        height: 13.5em;
+        left: 19%;
+        width: 62vw;
+    }
+}
+
+@media (min-width: 1000px) {
+    .text-titulo{
+        font-size: 4.2em;
+    }
+    .text-center {
+        font-size: 3.3em;
+    }
+    .paragrafos {
+        height: 541px;
+        transform: perspective(338px) rotateX(27deg);
+        top: 55%;
+        bottom: unset;
+    }
+    .desaparecer {
+        bottom: 44%;
+        height: 21em;
+        left: 23%;
+        width: 54vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .text-titulo{
+        font-size: 4.6em;
+    }
+    .text-center {
+        font-size: 4.1em;
+    }
+    .paragrafos {
+        transform: perspective(300px) rotateX(40deg);
+        height: 900px;
+        top: unset;
+    }
+    .desaparecer {
+        bottom: 52%;
+        height: 11em;
+        width: 65vw;
+        left: 18%;
+    }
+}
+
+@media (min-height: 700px) {
+    
+    .desaparecer {
+        bottom: 38%;
+        height: 21em;
+        left: 23%;
+        width: 54vw;
+    }
+}
+
+.historia-animacao {
+    animation: 96s linear 8s paragrafos forwards;
+    
+}
+
+@keyframes paragrafos {
+    0% {
+      top: 34em;
+      opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    90% {
+        top: -400%;
+        opacity: 0.8;
+    }
+    100% {
+      top: -600%;
+      opacity: 0;
+    }
+}
