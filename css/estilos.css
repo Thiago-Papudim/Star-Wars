@@ -204,6 +204,7 @@ canvas {
     text-align: center;
     padding: 1em;
     font-size: .9em;
+    z-index: 3;
 }
 .copy a{
     
